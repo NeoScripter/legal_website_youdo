@@ -95,6 +95,7 @@ body {
 
 .statue_image {
     position: absolute;
+    object-fit: contain;
     right: 0;
     top: 0;
     height: var(--statue-height);
