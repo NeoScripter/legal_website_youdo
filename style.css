@@ -247,8 +247,9 @@ p {
     flex-shrink: 0;
 }
 
-.bullet_point_wrapper {
+.rating_subsection {
     width: calc(100% - 2em);
+    margin-top: 1em;
 }
 
 .flex_group {
