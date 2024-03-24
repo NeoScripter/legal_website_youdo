@@ -1,7 +1,7 @@
 :root {
     --primary-text-color: #fff;
     --section-bg-color: rgb(61, 61, 61);
-    --statue-height: 50rem;
+    --statue-height: 60rem;
 
     --fs--2: clamp(0.7035rem, 0.8118rem + -0.1083vi, 0.7901rem);
     --fs--1: clamp(0.8889rem, 0.8767rem + 0.0611vi, 0.9377rem);
@@ -13,10 +13,32 @@
     --fs-5: clamp(1.802rem, 0.9373rem + 4.3236vi, 5.2609rem);
   }
 
+  @font-face {
+    font-family: 'Montrerrat Regular';
+    src: url(assets/fonts/Montserrat-Regular.ttf);
+  }
+
+  @font-face {
+    font-family: 'Montrerrat Black';
+    src: url(assets/fonts/Montserrat-Black.ttf);
+  }
+
+  @font-face {
+    font-family: 'Montrerrat Bold';
+    src: url(assets/fonts/Montserrat-Bold.ttf);
+  }
+
+  @font-face {
+    font-family: 'Montrerrat Semi-Bold';
+    src: url(assets/fonts/Montserrat-SemiBold.ttf);
+  }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    line-height: 1.3;
+    word-wrap: break-word;
 }
 
 img {
@@ -34,8 +56,9 @@ a {
 }
 
 body {
-    font-family: system-ui, sans-serif;
+    font-family: 'Montrerrat Regular', system-ui, sans-serif;
     min-height: 100vh;
+    color: var(--primary-text-color);
 }
 
 .primary_nav {
@@ -53,7 +76,6 @@ body {
 
 .num_wrapper, .nav_list a {
     color: var(--primary-text-color);
-    font-weight: 600;
     text-align: center;
     padding-bottom: 0.5em;
     outline: none;
@@ -61,6 +83,10 @@ body {
 
 .nav_list a:not(.phone_link):focus, .nav_list a:not(.phone_link):hover {
     border-bottom: 1px solid var(--primary-text-color);
+}
+
+.num_wrapper {
+    padding-top: 0.5em;
 }
 
 .phone_link {
@@ -74,22 +100,39 @@ body {
     background-color: var(--primary-text-color);
 }
 
-/* Main page */
+/****** Main page ******/
 
 .main_wrapper {
     background-image: url(assets/images/header-bg.jpg);
     filter: grayscale(100%);
 }
 
-.main_text_wrapper {
-    z-index: 0;
+h1 {
+    font-family: 'Montrerrat Bold';
+    margin-block: 1em;
+    font-size: var(--fs-5);
+    word-wrap: normal;
+}
+
+h2 {
+    font-family: 'Montrerrat Semi-Bold';
+    font-size: var(--fs-3);
+    word-wrap: normal;
+}
+
+h1, h2, h3, p {
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: var(--fs-0);
 }
 
 .main_wrapper .main {
     position: relative;
     height: var(--statue-height);
 }
-.main_wrapper .statue_holder {
+.main_wrapper .statue_wrapper {
     background-color: rgb(0,0,0,0.8);
     position: absolute;
     right: 0;
@@ -118,20 +161,6 @@ body {
     width: 50%;
 }
 
-h1 {
-    color: var(--primary-text-color);
-}
-
-.main_wrapper h1 {
-    font-size: var(--fs-5);
-    margin-block: 1em;
-}
-
-.main_wrapper h2 {
-    font-size: var(--fs-3);
-    font-weight: 400;
-}
-
 @media screen and (max-width: 800px) {
     .statue_image {
         opacity: 0.5;
@@ -142,15 +171,18 @@ h1 {
     :root {
         --statue-height: calc(30rem + 10vw);
     }
+    .num_wrapper {
+        padding-top: 0em;
+    }
 }
 
-/* Second section */
+/****** Second section ******/
 
-.second_section {
+.carousel_wrapper {
     background-color: var(--section-bg-color);
 }
 
-/* Carousel */
+/****** Carousel ******/
 
 .carousel {
     padding-block: 2em;
@@ -158,27 +190,23 @@ h1 {
     overflow: hidden;
   }
   
-  .carousel-items {
+.carousel-items {
     display: flex;
-   /*  transition: transform 0.5s ease; */
-  }
-  
-  .carousel-item {
+    /* transition: transform 0.5s ease; */
+}
+
+.carousel-item {
     flex: 0 0 100%;
     text-align: center;
-  }
-  
-  .carousel-item img {
+}
+
+.carousel-item img {
     width: 70%;
     aspect-ratio: 1.3 / 1;
     object-fit: cover;
-  }
+}
 
-  .carousel-item img:hover {
-    scale: 1.3;
-  }
-  
-  .prev, .next {
+.prev, .next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -188,13 +216,59 @@ h1 {
     cursor: pointer;
     padding: 10px;
     z-index: 100;
-  }
-  
-  .prev { left: 10px; }
-  .next { right: 10px; }
+}
 
+.prev { left: 10px; }
+.next { right: 10px; }
 
-/* Practice section */
+/****** About us section ******/
+
+.description_wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--section-bg-color);
+    padding: 2em;
+    text-align: center;
+}
+
+.framed_digit {
+    display: grid;
+    place-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border: 1px solid #F7F7F1;
+    font-weight: 900;
+    font-size: 2rem;
+    color: #F7F7F1;
+    text-align: center;
+    font-family: 'Montrerrat Black';
+    margin-right: 0.5em;
+    flex-shrink: 0;
+}
+
+.bullet_point_wrapper {
+    width: calc(100% - 2em);
+}
+
+.flex_group {
+    display: flex;
+    align-items: center;
+    margin-block: 0.7em;
+    text-align: left;
+}
+
+.logo {
+    margin-block: 2rem;
+}
+
+.description_subsection {
+    text-align: left;
+    text-indent: 2em;
+    padding: 2em;
+}
+
+/****** Practice section ******/
 
 .practice_wrapper .main {
     background-color: var(--section-bg-color);
