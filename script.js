@@ -1,3 +1,37 @@
+const visitorNumbers = document.querySelectorAll('.visitor_num');
+
+function updateVisitorNumbers() {
+    let savedData = sessionStorage.getItem('visitorNumberData');
+    let data;
+
+    if (savedData !== null) {
+        data = JSON.parse(savedData);
+        if (Date.now() - data.timestamp < 5000) {
+            updateDOMElements(data.number);
+            return;
+        }
+    }
+
+    let number = createRandomNumber();
+    let timestamp = Date.now();
+    updateDOMElements(number);
+
+    sessionStorage.setItem('visitorNumberData', JSON.stringify({number, timestamp}));
+}
+
+function updateDOMElements(number) {
+    visitorNumbers.forEach(visitorNumber => {
+        visitorNumber.textContent = number;
+    });
+}
+
+function createRandomNumber() {
+    return Math.floor(Math.random() * 10) + 2; 
+}
+
+updateVisitorNumbers();
+setInterval(updateVisitorNumbers, 5000);
+
 
 const serviceItems = document.querySelectorAll('.service_item');
 
