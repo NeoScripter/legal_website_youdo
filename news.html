@@ -3,9 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новости</title>
+    <meta name="yandex-verification" content="124e9b3839b06e95" />
+    <meta name="description" content="Квалифицированная юридическая помощь Центрального Юридического бюро в решении вопросов для физических и юридических лиц в Москве и МО. Бесплатная консультация юриста. Звоните 8 (495) 101-41-21.">
+    <meta name="robots" content="index,follow" />
+    <meta name="keywords" content="юридическая компания, юридическая компания москва, центр юридической помощи, центр юридической защиты, юридическая помощь в москве, бесплатная консультация юриста, центральное юридическое бюро, бесплатная юридическая консультация">
+    <title>Центральное Юридическое бюро | Новости</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="form.js" defer></script>
 </head>
 <body>
     <div class="wrapper news_wrapper">
@@ -21,7 +27,18 @@
             </ul>
         </nav>
         <main class="main news">
+            <form id="contactForm">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
             
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            
+                <button type="submit">Send</button>
+            </form>
         </main>
         <footer class="footer">
             <p class="underscored">Политика конфиденциальности</p>

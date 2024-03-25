@@ -125,21 +125,3 @@ function setupCarouselControls() {
         document.querySelector('.carousel-items').style.transform = `translateX(${offset / divisor}%)`;
     }
 }
-
-/* const listOfServices = document.querySelector('.services_left_subsection');
-
-fetch('services.json')
-        .then(response => response.json())
-        .then(products => {
-            Object.entries(services).slice(0, 10).forEach(([id, service]) => {
-                const serviceItem = document.createElement('div');
-                serviceItem.classList.add('service_item');
-                const serviceDescription = document.createElement('div');
-                serviceDescription.classList.add('service_description');
-                serviceDescription.classList.add('hidden');
-                serviceDescription.innerHTML = `<p>${service.name}</p><p class="product_price">${product.price}</p>`;
-                serviceItem.innerHTML = `<p class="product_name">${product.name}</p><img src="${product.image}" alt="${product.name}"><p class="product_price">${product.price}</p>`;
-                listOfServices.appendChild(serviceItem);
-            });
-        })
-        .catch(error => console.error('Error loading products:', error)); */

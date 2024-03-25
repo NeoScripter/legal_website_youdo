@@ -2,7 +2,7 @@
     --primary-text-color: #fff;
     --section-light-bg-color: rgb(61, 61, 61);
     --section-dark-bg-color: rgb(40, 39, 39);
-    --statue-height: 60rem;
+    --statue-height: 50rem;
     --background-gradient: linear-gradient(to bottom, var(--section-light-bg-color) 0%, var(--section-dark-bg-color) 100%);
 
     --fs--2: clamp(0.7035rem, 0.8118rem + -0.1083vi, 0.7901rem);
@@ -62,13 +62,13 @@ a {
 h1 {
     font-family: 'Montrerrat Bold';
     margin-block: 1em;
-    font-size: var(--fs-5);
+    font-size: var(--fs-4);
     word-wrap: normal;
 }
 
 h2 {
-    font-family: 'Montrerrat Semi-Bold';
-    font-size: var(--fs-3);
+    font-family: 'Montrerrat Regular';
+    font-size: var(--fs-2);
     word-wrap: normal;
 }
 
@@ -191,7 +191,7 @@ body {
         width: 80%;
     }
     :root {
-        --statue-height: calc(30rem + 10vw);
+        --statue-height: calc(25rem + 10vw);
     }
     .num_wrapper {
         padding-top: 0em;
@@ -356,4 +356,34 @@ body {
 
 .no_margin {
     margin: 0;
+}
+
+
+/****** Contact form ******/
+
+#contactForm {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+#contactForm label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#contactForm input, #contactForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+}
+
+#contactForm button {
+    padding: 10px 20px;
+    background-color: #0056b3;
+    color: white;
+    border: none;
+    cursor: pointer;
 }
