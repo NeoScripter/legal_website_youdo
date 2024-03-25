@@ -31,6 +31,11 @@ async function processImagesSequentially(images) {
             console.log(src);
             const img = await loadImage(src); 
             const imageWrapper = document.createElement('div');
+            if (carouselContainer.classList.contains('practice')) {
+                console.log('Item has the class "active".');
+            } else {
+                console.log('Item does not have the class "active".');
+            }
             imageWrapper.classList.add('carousel-item');
             imageWrapper.appendChild(img);
             carouselContainer.appendChild(imageWrapper);
@@ -46,31 +51,45 @@ processImagesSequentially(images);
 
 
 function setupCarouselControls() {
-let index = 0;
-const items = document.querySelectorAll('.carousel-item');
-const totalItems = items.length;
+    let index = 0;
+    const items = document.querySelectorAll('.carousel-item');
+    const totalItems = items.length;
+    const carousel = document.getElementById('carousel');
+    const carouselWidth = carousel.offsetWidth;
+    let divisor;
+    let quotient = Math.floor(carouselWidth / 500);
 
-document.querySelector('.prev').addEventListener('click', () => {
-    if (index > 0) {
-        index--;
-    } else {
-        index = totalItems - 1; 
+    switch (quotient) {
+        case 0: divisor = 1; break;
+        case 1: divisor = 2; break;
+        case 2: divisor = 3; break;
+        default: divisor = 4; 
     }
-    updateCarousel();
-});
+    items.forEach(carouselItem => {
+        carouselItem.style.flex = `0 0 ${100 / divisor}%`;
+    });
 
-document.querySelector('.next').addEventListener('click', () => {
-    if (index < totalItems - 1) {
-        index++;
-    } else {
-        index = 0; 
+    document.querySelector('.prev').addEventListener('click', () => {
+        if (index > 0) {
+            index--;
+        } else {
+            index = totalItems - 1; 
+        }
+        updateCarousel();
+    });
+
+    document.querySelector('.next').addEventListener('click', () => {
+        if (index < totalItems - 1) {
+            index++;
+        } else {
+            index = 0; 
+        }
+        updateCarousel();
+    });
+    function updateCarousel() {
+        const offset = index * -100;
+        document.querySelector('.carousel-items').style.transform = `translateX(${offset / divisor}%)`;
     }
-    updateCarousel();
-});
-function updateCarousel() {
-    const offset = index * -100;
-    document.querySelector('.carousel-items').style.transform = `translateX(${offset}%)`;
-}
 }
 
 /* const listOfServices = document.querySelector('.services_left_subsection');
