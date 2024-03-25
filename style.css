@@ -60,7 +60,7 @@ a {
 }
 
 h1 {
-    font-family: 'Montrerrat Bold';
+    font-family: 'Montrerrat Semi-Bold';
     margin-block: 1em;
     font-size: var(--fs-4);
     word-wrap: normal;
@@ -73,7 +73,7 @@ h2 {
 }
 
 h3 {
-    font-family: 'Montrerrat Semi-Bold';
+    font-family: 'Montrerrat Regular';
     font-size: var(--fs-1);
     word-wrap: normal;
 }
@@ -180,7 +180,7 @@ body {
     padding: 5%;
     color: var(--primary-text-color);
     z-index: 5;
-    width: 60%;
+    width: 55%;
 }
 
 .request_consultation {
@@ -207,7 +207,7 @@ body {
     }
     .main_text_wrapper {
         width: 100%;
-        padding: 10%;
+        padding-inline: 10%;
     }
     :root {
         --statue-height: calc(25rem + 10vw);
