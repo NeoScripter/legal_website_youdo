@@ -1,7 +1,9 @@
 :root {
     --primary-text-color: #fff;
-    --section-bg-color: rgb(61, 61, 61);
+    --section-light-bg-color: rgb(61, 61, 61);
+    --section-dark-bg-color: rgb(40, 39, 39);
     --statue-height: 60rem;
+    --background-gradient: linear-gradient(to bottom, var(--section-light-bg-color) 0%, var(--section-dark-bg-color) 100%);
 
     --fs--2: clamp(0.7035rem, 0.8118rem + -0.1083vi, 0.7901rem);
     --fs--1: clamp(0.8889rem, 0.8767rem + 0.0611vi, 0.9377rem);
@@ -33,6 +35,8 @@
     src: url(assets/fonts/Montserrat-SemiBold.ttf);
   }
 
+/****** General settings ******/
+
 * {
     margin: 0;
     padding: 0;
@@ -55,16 +59,46 @@ a {
     text-decoration: none;
 }
 
+h1 {
+    font-family: 'Montrerrat Bold';
+    margin-block: 1em;
+    font-size: var(--fs-5);
+    word-wrap: normal;
+}
+
+h2 {
+    font-family: 'Montrerrat Semi-Bold';
+    font-size: var(--fs-3);
+    word-wrap: normal;
+}
+
+h3 {
+    font-family: 'Montrerrat Semi-Bold';
+    font-size: var(--fs-1);
+    word-wrap: normal;
+}
+
+
+h1, h2, h3, p {
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: var(--fs-0);
+}
+
 body {
     font-family: 'Montrerrat Regular', system-ui, sans-serif;
     min-height: 100vh;
     color: var(--primary-text-color);
+    background: var(--background-gradient);
 }
+
+/****** Navigation ******/
 
 .primary_nav {
     font-size: var(--fs-0);
     padding: 0 1em 1em 1em;
-    background-color: rgb(0,0,0,0.8);
 }
 
 .nav_list {
@@ -73,6 +107,12 @@ body {
     align-items: center;
     flex-wrap: wrap;
 }
+
+.main_wrapper .primary_nav {
+    background-color: rgb(0,0,0,0.8);
+}
+
+/****** Link styling ******/
 
 .num_wrapper, .nav_list a {
     color: var(--primary-text-color);
@@ -107,31 +147,13 @@ body {
     filter: grayscale(100%);
 }
 
-h1 {
-    font-family: 'Montrerrat Bold';
-    margin-block: 1em;
-    font-size: var(--fs-5);
-    word-wrap: normal;
-}
-
-h2 {
-    font-family: 'Montrerrat Semi-Bold';
-    font-size: var(--fs-3);
-    word-wrap: normal;
-}
-
-h1, h2, h3, p {
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: var(--fs-0);
-}
-
-.main_wrapper .main {
+.main.index {
     position: relative;
     height: var(--statue-height);
 }
+
+/****** First section ******/ 
+
 .main_wrapper .statue_wrapper {
     background-color: rgb(0,0,0,0.8);
     position: absolute;
@@ -178,9 +200,6 @@ p {
 
 /****** Second section ******/
 
-.carousel_wrapper {
-    background-color: var(--section-bg-color);
-}
 
 /****** Carousel ******/
 
@@ -227,7 +246,6 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: var(--section-bg-color);
     padding: 2em;
     text-align: center;
 }
@@ -269,13 +287,66 @@ p {
     padding: 2em;
 }
 
-/****** Practice section ******/
-
-.practice_wrapper .main {
-    background-color: var(--section-bg-color);
-}
+/****** Practice page ******/
 
 .practice_wrapper h1 {
     padding-top: 1em;
     text-align: center;
+}
+
+/****** Services page ******/
+
+.main.services {
+    padding: 2em;
+}
+
+.services_header {
+    text-align: center;
+}
+
+.services_section {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em;
+}
+
+.services_left_subsection, .services_right_subsection {
+    flex: 1;
+}
+
+.service_item {
+    border-bottom: 3px solid var(--primary-text-color);
+    padding-top: 1em;
+    cursor: pointer;
+}
+
+.price {
+    font-family: 'Montrerrat Semi-Bold';
+    font-size: var(--fs-1);
+    text-align: right;
+    padding-block: 0.5em;
+}
+
+.hidden {
+    display: none;
+}
+
+/****** Footer ******/
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2em 1em;
+    border-top: 2px solid var(--primary-text-color);
+}
+
+.underscored {
+    text-decoration: underline;
+    padding-bottom: 1em;
+}
+
+.no_margin {
+    margin: 0;
 }
