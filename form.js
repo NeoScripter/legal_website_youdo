@@ -14,11 +14,21 @@
 
 const url ='';
 const myForm = document.getElementById('contactForm');
+const myName = document.getElementById('name');
+const myEmail = document.getElementById('email');
+const myMessage = document.getElementById('message');
 
 myForm.addEventListener('submit', submitter());
 
 function submitter(e) {
     console.log('submitted');
     e.preventDefault();
+    let message = '';
 
+    if (myName.value.length < 5) {
+        message += '<br>Name needs to be 5+ characters';
+    }
+    if (myEmail.value.length < 5) {
+        message += '<br>Email needs to be 5+ characters';
+    }
 }
