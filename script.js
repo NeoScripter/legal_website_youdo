@@ -125,3 +125,28 @@ function setupCarouselControls() {
         document.querySelector('.carousel-items').style.transform = `translateX(${offset / divisor}%)`;
     }
 }
+
+function fadeElementSequentially() {
+    let currentIndex = 1;
+
+    fadeElement(currentIndex);
+
+    setTimeout(function() {
+        setInterval(function() {
+            currentIndex += 1;
+
+            if (currentIndex > 10) currentIndex = 1;
+
+            fadeElement(currentIndex);
+        }, 60000); 
+    }, 10000); 
+}
+
+function fadeElement(index) {
+    $('.yved:nth-child(' + index + ')')
+        .fadeIn(200)
+        .delay(2000) 
+        .fadeOut(200);
+}
+
+fadeElementSequentially();
