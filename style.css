@@ -152,6 +152,23 @@ body {
     height: var(--statue-height);
 }
 
+.reviews_wrapper {
+    height:800px;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.reviews_section {
+    width: 720px;
+    height:95%;
+    border-radius:8px;
+    word-wrap: normal;
+    filter: invert(0.85) hue-rotate(180deg);
+    border: 2px solid black;
+}
+
 /****** First section ******/ 
 
 .main_wrapper .statue_wrapper {
@@ -180,7 +197,10 @@ body {
     padding: 5%;
     color: var(--primary-text-color);
     z-index: 5;
-    width: 55%;
+}
+
+.main_text_subwrapper {
+    width: 50%;
 }
 
 .request_consultation {
@@ -206,7 +226,6 @@ body {
         opacity: 0.5;
     }
     .main_text_wrapper {
-        width: 100%;
         padding-inline: 10%;
     }
     :root {
@@ -218,6 +237,12 @@ body {
     .request_button {
         font-size: var(--fs-0);
         margin-block: 2em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .main_text_subwrapper {
+        width: 100%;
     }
 }
 
@@ -302,7 +327,7 @@ body {
 }
 
 .logo {
-    margin-block: 2rem;
+    margin: 2rem 0 1rem 0;
 }
 
 .description_subsection {

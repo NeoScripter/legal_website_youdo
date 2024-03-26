@@ -7,13 +7,13 @@
     <meta name="description" content="Квалифицированная юридическая помощь Центрального Юридического бюро в решении вопросов для физических и юридических лиц в Москве и МО. Бесплатная консультация юриста. Звоните 8 (495) 101-41-21.">
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="юридическая компания, юридическая компания москва, центр юридической помощи, центр юридической защиты, юридическая помощь в москве, бесплатная консультация юриста, центральное юридическое бюро, бесплатная юридическая консультация">
-    <title>Центральное Юридическое бюро | Онлайн юрист</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
+    <title>Центральное Юридическое бюро | Новости</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../script.js" defer></script>
 </head>
 <body>
-    <div class="wrapper help_wrapper">
+    <div class="wrapper news_wrapper">
         <nav class="primary_nav">
             <ul class="nav_list">
                 <li><a href="index.html">Главная</a></li>
@@ -22,12 +22,23 @@
                 <li><a href="news.html">Новости</a></li>
                 <li><a href="practice.html">Судебная практика</a></li>
                 <li><a href="support.html">Онлайн юрист</a></li>
-                <li class="phone_num"><a href="+74951014121" class="phone_link">8(495)101-41-21</a></li>
+                <li class="phone_num"><a href="tel:+74951014121" class="phone_link">8(495)101-41-21</a></li>
                 <li class="num_wrapper">Сейчас на сайте: <span class="visitor_num">0</span></li>
             </ul>
         </nav>
-        <main class="main support">
-
+        <main class="main news">
+            <form id="contactForm" action="contact.php" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+            
+                <button type="submit">Send</button>
+            </form>
         </main>
         <footer class="footer">
             <p class="underscored">Политика конфиденциальности</p>
