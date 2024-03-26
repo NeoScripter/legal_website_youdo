@@ -58,6 +58,41 @@
             <button class="next">&#10095;</button>
           </div>
     </div>
+    <div class="form_bg_image">
+        <div class="form_main_wrapper">
+            <div class="form_subwrapper">
+                <div class="form_title_wrapper">
+                    <h3>Получите бесплатную консультацию</h3>
+                    <p class="form_paragraph">Запишитесь на приём прямо сейчас</p>
+                </div>
+                <div class="form_flex_group">
+                    <form action="../contact.php" method="post" class="form ajax-contact-form">
+                        <input type="text" name="name" placeholder="Имя" class="form-input" id="name">
+                        <input type="text" name="phone" placeholder="Телефон" class="form-input phone_mask" id="phone">
+                        <textarea name="message" id="" cols="5" rows="5" placeholder="Вопрос юристу" class="form-input" id="text"></textarea>
+                        <button type="submit" name="submit" class="form-container__btn form-btn">Записаться на бесплатный приём</button>
+                        <div class="from-message"></div>
+                        <div class="agreement">нажимая кнопку вы даете согласие на <a href="#" class="agreement-link popup-open" data-bs-toggle="modal" data-bs-target="#exampleModal">обработку персональных данных</a></div>
+                    </form>
+                    <div class="form_description">
+                        <h4>На бесплатном приёме Вы получите:</h4>
+                        <div class="flex_subgroup">
+                            <span class="framed_digit">1</span>
+                            Четкие и понятные варианты решения вашей проблемы
+                        </div>
+                        <div class="flex_subgroup">
+                            <span class="framed_digit">2</span>
+                            Перечень необходимых документов
+                        </div>
+                        <div class="flex_subgroup">
+                            <span class="framed_digit">3</span>
+                            Пошаговая стратегия действий конкретно в Вашей ситуации
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <footer class="footer">
         <p class="underscored">Политика конфиденциальности</p>
         <p class="no_margin">ООО "ЦЕНТРАЛЬНОЕ ЮРИДИЧЕСКОЕ БЮРО</p>

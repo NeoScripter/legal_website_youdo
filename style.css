@@ -183,6 +183,11 @@ body {
     background-color: rgb(0,0,0,0.8);
 }
 
+.form_main_wrapper.services_form_wrapper {
+    background-color: rgb(0,0,0,0.3);
+    margin-top: 2em;
+}
+
 .form_subwrapper {
     padding: 1em;
     max-width: 45rem;
@@ -224,11 +229,30 @@ body {
 
 .form-input {
     padding: 1em;
+    font-size: var(--fs--1);
+    font-family: 'Montrerrat Regular';
 }
 
 .form-input::placeholder { 
     color: rgb(220, 202, 202);
     opacity: 1;
+}
+
+.form-btn {
+    font-family: 'Montrerrat Bold';
+    font-size: var(--fs-0);
+    padding-block: 1em;
+    cursor: pointer;
+}
+
+.agreement {
+    margin-top: -1em;
+}
+
+.agreement-link {
+    color: var(--primary-text-color);
+    font-family: 'Montrerrat Semi-Bold';
+    border-bottom: 1px solid white;
 }
 
 @media screen and (max-width: 650px) {
@@ -245,6 +269,24 @@ body {
         width: 100%;
     }
     .form {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width: 650px) {
+    .services .form_flex_group {
+        flex-direction: column-reverse;
+        gap: 1em;
+    }
+    .services .flex_subgroup {
+        flex-direction: row;
+        gap: 0;
+    }
+    .services .form_description {
+        text-align: left;
+        width: 100%;
+    }
+    .services .form {
         width: 100%;
     }
 }
@@ -442,7 +484,16 @@ body {
 .services_left_subsection, .services_right_subsection {
     flex: 1;
     padding: 1.5em;
-    min-width: 250px;
+    min-width: 300px;
+}
+
+@media screen and (max-width: 500px) {
+    .services_left_subsection, .services_right_subsection {
+        padding-inline: 0;
+    }
+    .main.services {
+        padding-inline: 0;
+    }
 }
 
 .service_item {
