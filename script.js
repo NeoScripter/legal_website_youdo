@@ -126,27 +126,17 @@ function setupCarouselControls() {
     }
 }
 
-function fadeElementSequentially() {
-    let currentIndex = 1;
-
-    fadeElement(currentIndex);
-
-    setTimeout(function() {
-        setInterval(function() {
-            currentIndex += 1;
-
-            if (currentIndex > 10) currentIndex = 1;
-
-            fadeElement(currentIndex);
-        }, 60000); 
-    }, 10000); 
+var i = 0;
+function yved(){
+i=1;
+$('.yved:nth-child('+i+')').fadeIn(200).delay(2000).fadeOut(200);
 }
-
-function fadeElement(index) {
-    $('.yved:nth-child(' + index + ')')
-        .fadeIn(200)
-        .delay(2000) 
-        .fadeOut(200);
-}
-
-fadeElementSequentially();
+setTimeout(function(){
+setInterval(
+function(){
+i=i+1;
+if(i>10) i=1;
+$('.yved:nth-child('+i+')').fadeIn(200).delay(2000).fadeOut(200);
+},60000);
+yved();
+},10000);
