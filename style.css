@@ -51,8 +51,6 @@ img {
 
 li {
     list-style: none;
-    margin-inline: 1em;
-    margin-top: 1em;
 }
 
 a {
@@ -99,7 +97,7 @@ body {
 
 .primary_nav {
     font-size: var(--fs-0);
-    padding: 0 1em 1em 1em;
+    padding: 1em;
     word-wrap: normal;
 }
 
@@ -108,6 +106,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 1em;
 }
 
 .main_wrapper .primary_nav {
@@ -282,6 +281,9 @@ body {
     }
     .form {
         width: 100%;
+    }
+    .primary_nav {
+        padding: 1em 0 0 0;
     }
 }
 
@@ -650,6 +652,9 @@ body {
     
     .policy_content {
         padding: 1em;
+    }
+    .nav_list {
+        flex-direction: column;
     }
 }
 
