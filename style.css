@@ -183,14 +183,23 @@ body {
     background-color: rgb(0,0,0,0.8);
 }
 
+.form_main_wrapper.services_form_wrapper, .form_main_wrapper.support_form_wrapper {
+    background-image: url(assets/images/form-bg.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: grayscale(100%);
+}
+
 .form_main_wrapper.services_form_wrapper {
-    background-color: rgb(0,0,0,0.3);
     margin-top: 2em;
 }
 
 .form_subwrapper {
     padding: 1em;
     max-width: 45rem;
+}
+.form_subwrapper.small {
+    background-color: rgb(0,0,0,0.8);
 }
 .form_flex_group {
     display: flex;
@@ -467,7 +476,7 @@ body {
 
 /****** Services page ******/
 
-.main.services {
+.main.services, .main.support {
     padding: 2em;
 }
 
@@ -491,7 +500,7 @@ body {
     .services_left_subsection, .services_right_subsection {
         padding-inline: 0;
     }
-    .main.services {
+    .main.services, .main.support {
         padding-inline: 0;
     }
 }
