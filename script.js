@@ -186,3 +186,17 @@ document.querySelectorAll('.close_policy_btn').forEach(closeButton => {
         reviewsWrapper.style.display = 'flex';
     });
 });
+
+// Privacy policy appearing on the main page //
+
+const returnButton = document.getElementById('back_to_main_btn');
+const policyOverlay = document.querySelector('.policy_overlay');
+const freeConsulationButton = document.querySelector('.request_consultation');
+
+freeConsulationButton.addEventListener('click', () => {
+    policyOverlay.style.display = 'flex';
+});
+
+returnButton.addEventListener('click', () => {
+    policyOverlay.style.display = 'none';
+});
