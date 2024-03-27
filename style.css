@@ -579,9 +579,8 @@ body {
     position: fixed;
     display: none;
     justify-content: center;
-    align-items: center;
     background: var(--background-gradient);
-    overflow-y: auto;
+    overflow-y: scroll;
     top: 0;
     bottom: 0;
     left: 0;
@@ -589,10 +588,10 @@ body {
     z-index: 12;
 }
 
-#back_to_main_btn {
-    position: absolute;
-    right: 1rem;
-    top: 1rem;
+.back_btn_wrapper {
+    display: flex;
+    padding: 0.5em 1em 1em 0;
+    justify-content: flex-end;
 }
 
 .policy_wrapper { 
