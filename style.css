@@ -51,6 +51,7 @@ img {
 
 li {
     list-style: none;
+    margin-left: 1em;
 }
 
 a {
@@ -655,6 +656,9 @@ body {
     }
     .nav_list {
         flex-direction: column;
+    }
+    li {
+        margin-left: 0;
     }
 }
 
