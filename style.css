@@ -649,7 +649,11 @@ body {
     .main.services, .main.support {
         padding-inline: 0;
     }
-    
+    .description_subsection {
+        text-align: center;
+        text-indent: 0;
+        padding: 2em 0 0 0;
+    }
     .policy_content {
         padding: 1em;
     }
