@@ -7,7 +7,7 @@ function updateVisitorNumbers() {
 
     if (savedData !== null) {
         data = JSON.parse(savedData);
-        if (Date.now() - data.timestamp < 5000) {
+        if (Date.now() - data.timestamp < 10000) {
             updateDOMElements(data.number);
             return;
         }
@@ -31,7 +31,7 @@ function createRandomNumber() {
 }
 
 updateVisitorNumbers();
-setInterval(updateVisitorNumbers, 5000);
+setInterval(updateVisitorNumbers, 10000);
 
 // Hidden lines in the services section //
 
@@ -155,3 +155,34 @@ setTimeout(function() {
   
   setInterval(cycleNotifications, 60000);
 }, 10000);
+
+
+// Privacy policy //
+
+const policyWrappers = document.querySelectorAll('.policy_wrapper');
+const mainContentWrappers = document.querySelectorAll('.overlay_wrapper');
+const reviewsWrapper = document.querySelector('.reviews_wrapper');
+
+document.querySelectorAll('.open_policy_btn').forEach(openButton => {
+    openButton.addEventListener('click', () => {
+        policyWrappers.forEach(policyWrapper => {
+            policyWrapper.style.display = 'block';
+        });
+        mainContentWrappers.forEach(contentWrapper => {
+            contentWrapper.style.display = 'none';
+        });
+        reviewsWrapper.style.display = 'none';
+    });
+});
+
+document.querySelectorAll('.close_policy_btn').forEach(closeButton => {
+    closeButton.addEventListener('click', () => {
+        policyWrappers.forEach(policyWrapper => {
+            policyWrapper.style.display = 'none';
+        });
+        mainContentWrappers.forEach(contentWrapper => {
+            contentWrapper.style.display = 'block';
+        });
+        reviewsWrapper.style.display = 'flex';
+    });
+});

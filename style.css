@@ -496,15 +496,6 @@ body {
     min-width: 300px;
 }
 
-@media screen and (max-width: 500px) {
-    .services_left_subsection, .services_right_subsection {
-        padding-inline: 0;
-    }
-    .main.services, .main.support {
-        padding-inline: 0;
-    }
-}
-
 .service_item {
     border-bottom: 3px solid var(--primary-text-color);
     padding-top: 1em;
@@ -574,6 +565,83 @@ body {
     color: white;
     border: none;
     cursor: pointer;
+}
+
+/****** Privacy policy ******/
+
+.policy_wrapper { 
+    display: none;
+}
+/* .policy_wrapper {
+    position: absolute;
+    top: 0;
+    z-index: 20;
+    left: 0;
+    right: 0;
+    background: var(--background-gradient);
+}
+ */
+/* .reviews_wrapper {
+    display: none;
+} */
+
+/* #page_content {
+    display: none;
+}
+.reviews_wrapper {
+    display: none;
+} */
+.policy_header {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em;
+    border-bottom: 1px solid var(--primary-text-color);
+}
+
+.policy_content {
+    padding: 2em;
+}
+
+.policy_content p {
+    font-size: var(--fs--1);
+}
+
+.policy_subtitle {
+    font-family: 'Montrerrat Bold';
+    margin-top: 0.5em;
+}
+
+.close_policy_btn {
+    font-family: 'Montrerrat Regular';
+}
+
+.close_policy_btn {
+    display: block;
+    cursor: pointer;
+    padding: 0.5em 1em;
+    background-color: transparent;
+    font-size: var(--fs--1);
+    font-family: 'Montrerrat Regular';
+    color: var(--primary-text-color);
+    border: 1px solid var(--primary-text-color);
+}
+
+.close_policy_btn:focus, .close_policy_btn:hover {
+    color: rgb(0,0,0,0.8);
+    background-color: var(--primary-text-color);
+}
+
+@media screen and (max-width: 500px) {
+    .services_left_subsection, .services_right_subsection {
+        padding-inline: 0;
+    }
+    .main.services, .main.support {
+        padding-inline: 0;
+    }
+    
+    .policy_content {
+        padding: 1em;
+    }
 }
 
 /****** Floating messages ******/
