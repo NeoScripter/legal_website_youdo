@@ -100,6 +100,12 @@ body {
     font-size: var(--fs-0);
     padding: 1em;
     word-wrap: normal;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--background-gradient);
 }
 
 .nav_list {
@@ -112,6 +118,54 @@ body {
 
 .main_wrapper .primary_nav {
     background-color: rgb(0,0,0,0.8);
+}
+
+/****** Navigation toggle ******/
+
+.nav-toggle {
+    cursor: pointer;
+    border: 0;
+    width: 3em;
+    height: 3em;
+    padding: 0em;
+    border-radius: 10px;
+    background: #fff;
+    transition: opacity 250ms ease;
+    display: none;
+    right: 6em;
+}
+
+.nav-toggle:focus,
+.nav-toggle:hover {
+    opacity: .75;
+}
+
+.hamburger {
+    width: 50%;
+    position: relative;
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+    display: block;
+    margin: 0 auto;
+    height: 3px;
+    background: #000;
+}
+
+.hamburger::before,
+.hamburger::after {
+    content: '';
+    width: 100%;
+}
+
+.hamburger::before {
+    transform: translateY(-6px);
+}
+
+.hamburger::after {
+    transform: translateY(3px);
 }
 
 /****** Link styling ******/
@@ -284,7 +338,7 @@ body {
         width: 100%;
     }
     .primary_nav {
-        padding: 1em 0 0 0;
+        padding: 1em 0 1em 0;
     }
 }
 
@@ -662,6 +716,12 @@ body {
     }
     li {
         margin-left: 0;
+    }
+    .nav-toggle {
+        display: block;
+    }
+    .prehidden {
+        display: none;
     }
 }
 

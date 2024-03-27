@@ -128,12 +128,15 @@
         <div class="wrapper main_wrapper">
             <nav class="primary_nav">
                 <ul class="nav_list">
-                    <li><a href="index.html">Главная</a></li>
-                    <li><a href="aboutus.html">О нас</a></li>
-                    <li><a href="services.html">Стоимость услуг</a></li>
-                    <li><a href="news.html">Новости</a></li>
-                    <li><a href="practice.html">Судебная практика</a></li>
-                    <li><a href="support.html">Онлайн юрист</a></li>
+                    <button class="nav-toggle" aria-label="open navigation">
+                        <span class="hamburger"></span>
+                    </button>
+                    <li class="collapsable prehidden"><a href="index.html">Главная</a></li>
+                    <li class="collapsable prehidden"><a href="aboutus.html">О нас</a></li>
+                    <li class="collapsable prehidden"><a href="services.html">Стоимость услуг</a></li>
+                    <li class="collapsable prehidden"><a href="news.html">Новости</a></li>
+                    <li class="collapsable prehidden"><a href="practice.html">Судебная практика</a></li>
+                    <li class="collapsable prehidden"><a href="support.html">Онлайн юрист</a></li>
                     <li class="phone_num"><a href="tel:+74951014121" class="phone_link">8(495)101-41-21</a></li>
                     <li class="num_wrapper">Сейчас на сайте: <span class="visitor_num">0</span></li>
                 </ul>
@@ -181,5 +184,14 @@
             </div>
         </div>
     </div>
+    <script>
+        const navigationSwitch = document.querySelector('.nav-toggle');
+    
+        navigationSwitch.addEventListener('click', () => {
+            document.querySelectorAll('.collapsable').forEach((listItem) => {
+                listItem.classList.toggle('prehidden');
+            });
+        });
+    </script>
 </body>
 </html>
