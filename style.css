@@ -99,6 +99,7 @@ body {
 .primary_nav {
     font-size: var(--fs-0);
     padding: 0 1em 1em 1em;
+    word-wrap: normal;
 }
 
 .nav_list {
@@ -568,6 +569,20 @@ body {
 }
 
 /****** Privacy policy ******/
+
+.policy_overlay {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(0,0,0);
+    overflow-y: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 12;
+}
 
 .policy_wrapper { 
     display: none;
