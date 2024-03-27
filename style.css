@@ -572,25 +572,11 @@ body {
 .policy_wrapper { 
     display: none;
 }
-/* .policy_wrapper {
-    position: absolute;
-    top: 0;
-    z-index: 20;
-    left: 0;
-    right: 0;
-    background: var(--background-gradient);
-}
- */
-/* .reviews_wrapper {
-    display: none;
-} */
 
-/* #page_content {
-    display: none;
+.open_policy_btn {
+    cursor: pointer;
 }
-.reviews_wrapper {
-    display: none;
-} */
+
 .policy_header {
     display: flex;
     justify-content: flex-end;
