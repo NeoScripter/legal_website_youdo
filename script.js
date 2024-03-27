@@ -1,3 +1,4 @@
+// Number of website viewers generator //
 const visitorNumbers = document.querySelectorAll('.visitor_num');
 
 function updateVisitorNumbers() {
@@ -32,6 +33,7 @@ function createRandomNumber() {
 updateVisitorNumbers();
 setInterval(updateVisitorNumbers, 5000);
 
+// Hidden lines in the services section //
 
 const serviceItems = document.querySelectorAll('.service_item');
 
@@ -41,6 +43,8 @@ serviceItems.forEach((item) => {
         closestDescription.classList.toggle('hidden');
     });
 });
+
+// Code for automatically fill the carousel with images //
 
 const carouselContainer = document.getElementById('carousel');
 const images = [];
@@ -83,6 +87,7 @@ async function processImagesSequentially(images) {
 
 processImagesSequentially(images);
 
+// Code that counts how many carousel images should be displayed at a time based on the screen width //
 
 function setupCarouselControls() {
     let index = 0;
@@ -126,17 +131,27 @@ function setupCarouselControls() {
     }
 }
 
-var i = 0;
-function yved(){
-i=1;
-$('.yved:nth-child('+i+')').fadeIn(200).delay(2000).fadeOut(200);
+// Free consulation visitor imitator //
+
+let currentIndex = 0;
+
+function showFirstNotification() {
+  currentIndex = 1;
+  fadeInOutNotification(currentIndex);
 }
-setTimeout(function(){
-setInterval(
-function(){
-i=i+1;
-if(i>10) i=1;
-$('.yved:nth-child('+i+')').fadeIn(200).delay(2000).fadeOut(200);
-},60000);
-yved();
-},10000);
+
+function fadeInOutNotification(index) {
+  $(`.yved:nth-child(${index})`).fadeIn(200).delay(2000).fadeOut(200);
+}
+
+function cycleNotifications() {
+  currentIndex++;
+  if (currentIndex > 10) currentIndex = 1;
+  fadeInOutNotification(currentIndex);
+}
+
+setTimeout(function() {
+  showFirstNotification();
+  
+  setInterval(cycleNotifications, 60000);
+}, 10000);
