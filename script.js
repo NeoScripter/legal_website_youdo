@@ -50,7 +50,7 @@ const carouselContainer = document.getElementById('carousel');
 const images = [];
 
 for (let i = 1; i < 50; i++) {
-    const newPathToImage = `../assets/carousel/image${i}.jpg`;
+    const newPathToImage = `assets/carousel/image${i}.jpg`;
     images.push(newPathToImage);
 }
 
