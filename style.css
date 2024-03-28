@@ -129,15 +129,18 @@ body {
     height: 3em;
     padding: 0em;
     border-radius: 10px;
-    background: #fff;
+    background: rgb(95, 92, 92);
     transition: opacity 250ms ease;
     display: none;
     right: 6em;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
 }
 
 .nav-toggle:focus,
 .nav-toggle:hover {
-    opacity: .75;
+    background: rgb(127, 123, 123);
 }
 
 .hamburger {
@@ -151,7 +154,7 @@ body {
     display: block;
     margin: 0 auto;
     height: 3px;
-    background: #000;
+    background: #fff;
 }
 
 .hamburger::before,
@@ -482,6 +485,11 @@ body {
 
 /****** About us section ******/
 
+.aboutus_wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 21;
+}
 .description_wrapper {
     display: flex;
     flex-direction: column;
