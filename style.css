@@ -620,6 +620,7 @@ body {
     border: 2px solid var(--primary-text-color);
     padding: clamp(0.3em, 3vw, 1em);
     border-radius: 10px;
+    box-shadow: 4px 4px 5px 5px rgb(0,0,0, 0.3);
 }
 
 .news_piece > p {
