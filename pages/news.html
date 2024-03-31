@@ -7,11 +7,11 @@
     <meta name="description" content="Квалифицированная юридическая помощь Центрального Юридического бюро в решении вопросов для физических и юридических лиц в Москве и МО. Бесплатная консультация юриста. Звоните 8 (495) 101-41-21.">
     <meta name="robots" content="index,follow" />
     <meta name="keywords" content="юридическая компания, юридическая компания москва, центр юридической помощи, центр юридической защиты, юридическая помощь в москве, бесплатная консультация юриста, центральное юридическое бюро, бесплатная юридическая консультация">
-    <title>Центральное Юридическое бюро | О нас</title>
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-    <script src="contactform.js" defer></script>
+    <title>Центральное Юридическое бюро | Новости</title>
+    <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="../style.css">
+    <script src="../js/script.js" defer></script>
+    <script src="../js/contactform.js" defer></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
@@ -84,13 +84,13 @@
         </div>
     </div>
     <div class="overlay_wrapper">
-        <div class="wrapper aboutus_wrapper">
+        <div class="wrapper news_wrapper">
             <nav class="primary_nav">
                 <ul class="nav_list">
                     <button class="nav-toggle" aria-label="open navigation">
                         <span class="hamburger"></span>
                     </button>
-                    <li class="collapsable prehidden"><a href="index.html">Главная</a></li>
+                    <li class="collapsable prehidden"><a href="../index.html">Главная</a></li>
                     <li class="collapsable prehidden"><a href="aboutus.html">О нас</a></li>
                     <li class="collapsable prehidden"><a href="services.html">Стоимость услуг</a></li>
                     <li class="collapsable prehidden"><a href="news.html">Новости</a></li>
@@ -100,82 +100,53 @@
                     <li class="num_wrapper">Сейчас на сайте: <span class="visitor_num">0</span></li>
                 </ul>
             </nav>
-        </div>
-        <div class="description_wrapper">
-            <h2><strong>Сохраните свое время, доверив дело нам</strong></h2>
-            <p>Пока мы решаем вашу проблему - вы занимаетесь своими делами</p>
-            <img src="assets/images/why-are-we.png" alt="Белая колонна с подписью Центральное юридическое бюро" class="logo">
-            <div class="rating_wrapper">
-                <iframe src="https://yandex.ru/sprav/widget/rating-badge/73583848814?type=rating&theme=dark" width="150" height="50" frameborder="0"></iframe>
-            </div>
-            <p>Почему выбирают именно нас?</p>
-            <div class="rating_subsection">
-                <div class="flex_group"><span class="framed_digit">1</span> Бесплатная юридическая консультация</div>
-                <div class="flex_group"><span class="framed_digit">2</span> Квалифицированная юридическая помощь</div>
-                <div class="flex_group"><span class="framed_digit">3</span> Индивидуальный подход к каждой проблеме</div>
-                <div class="flex_group"><span class="framed_digit">4</span> Гарантия качества</div>
-                <div class="flex_group"><span class="framed_digit">5</span> Работа на результат</div>
-                <div class="flex_group"><span class="framed_digit">6</span> Конфиденциальность</div>
-            </div>
-            <div class="description_subsection">
-                <p>Центральное Юридическое бюро специализируется на защите прав и интересов клиентов в сложных правовых ситуациях. Мы гарантируем, что вы получите квалифицированную юридическую помощь и защиту своих прав.</p>
-                <p>Наши юристы имеют богатый опыт работы в различных областях права, включая гражданское, уголовное, административное, трудовое и другие отрасли. Мы готовы помочь вам решить любые юридические проблемы, связанные с вашими делами.</p>
-                <p>Мы работаем на результат, и наша цель - помочь вам добиться справедливости и защиты ваших прав. Наша команда состоит из высококвалифицированных специалистов, которые всегда готовы помочь вам в любое время.</p>
-                <p>Запишитесь на бесплатный приём к нам уже сегодня и получите гарантию результата! Мы уверены, что наша помощь станет для вас надежной опорой в решении юридических проблем.</p>
-            </div>
-        </div>
-        <div class="carousel_wrapper">
-            <div class="carousel">
-                <div id="carousel" class="carousel-items">
-                </div>
-                <button class="prev">&#10094;</button>
-                <button class="next">&#10095;</button>
-              </div>
-        </div>
-        <div class="form_bg_image">
-            <div class="form_main_wrapper">
-                <div class="form_subwrapper">
-                    <div class="form_title_wrapper">
-                        <h3>Получите бесплатную консультацию</h3>
-                        <p class="form_paragraph">Запишитесь на приём прямо сейчас</p>
-                    </div>
-                    <div class="form_flex_group">
-                        <form action="contact.php" method="post" class="form ajax-contact-form">
-                            <input type="text" name="name" placeholder="Имя" class="form-input" id="name">
-                            <input type="text" name="phone" placeholder="Телефон" class="form-input phone_mask" id="phone">
-                            <textarea name="message" id="" cols="5" rows="5" placeholder="Вопрос юристу" class="form-input" id="text"></textarea>
-                            <div style="display: none;">
-                                <input type="text" name="fax" placeholder="Оставьте это поле пустым">
+            <main class="main news">
+                <div class="form_bg_image">
+                    <div class="form_main_wrapper">
+                        <div class="form_subwrapper">
+                            <div class="form_title_wrapper">
+                                <h3>Получите бесплатную консультацию</h3>
+                                <p class="form_paragraph">Запишитесь на приём прямо сейчас</p>
                             </div>
-                            <button type="submit" name="submit" class="form-container__btn form-btn">Записаться на бесплатный приём</button>
-                            <div class="from-message"></div>
-                            <div class="agreement">нажимая кнопку вы даете согласие на <a href="#" class="open_policy_btn agreement-link popup-open" data-bs-toggle="modal" data-bs-target="#exampleModal">обработку персональных данных</a></div>
-                        </form>
-                        <div class="form_description">
-                            <h4>На бесплатном приёме Вы получите:</h4>
-                            <div class="flex_subgroup">
-                                <span class="framed_digit">1</span>
-                                Четкие и понятные варианты решения вашей проблемы
-                            </div>
-                            <div class="flex_subgroup">
-                                <span class="framed_digit">2</span>
-                                Перечень необходимых документов
-                            </div>
-                            <div class="flex_subgroup">
-                                <span class="framed_digit">3</span>
-                                Пошаговая стратегия действий конкретно в Вашей ситуации
+                            <div class="form_flex_group">
+                                <form action="../contact.php" method="post" class="form ajax-contact-form">
+                                    <input type="text" name="name" placeholder="Имя" class="form-input" id="name">
+                                    <input type="text" name="phone" placeholder="Телефон" class="form-input phone_mask" id="phone">
+                                    <textarea name="message" id="" cols="5" rows="5" placeholder="Вопрос юристу" class="form-input" id="text"></textarea>
+                                    <div style="display: none;">
+                                        <input type="text" name="fax" placeholder="Оставьте это поле пустым">
+                                    </div>
+                                    <button type="submit" name="submit" class="form-container__btn form-btn">Записаться на бесплатный приём</button>
+                                    <div class="from-message"></div>
+                                    <div class="agreement">нажимая кнопку вы даете согласие на <a href="#" class="agreement-link popup-open open_policy_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">обработку персональных данных</a></div>
+                                </form>
+                                <div class="form_description">
+                                    <h4>На бесплатном приёме Вы получите:</h4>
+                                    <div class="flex_subgroup">
+                                        <span class="framed_digit">1</span>
+                                        Четкие и понятные варианты решения вашей проблемы
+                                    </div>
+                                    <div class="flex_subgroup">
+                                        <span class="framed_digit">2</span>
+                                        Перечень необходимых документов
+                                    </div>
+                                    <div class="flex_subgroup">
+                                        <span class="framed_digit">3</span>
+                                        Пошаговая стратегия действий конкретно в Вашей ситуации
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </main>
+            <footer class="footer">
+                <p class="underscored open_policy_btn">Политика конфиденциальности</p>
+                <p class="no_margin">ООО "ЦЕНТРАЛЬНОЕ ЮРИДИЧЕСКОЕ БЮРО</p>
+                <p class="no_margin">ОГРН: 1237700537590, ИНН: 9709097550</p>
+                <p class="no_margin">© 2023 ЦЕНТРАЛЬНОЕ ЮРИДИЧЕСКОЕ БЮРО | Все права защищены</p>
+            </footer>
         </div>
-        <footer class="footer">
-            <p class="underscored open_policy_btn">Политика конфиденциальности</p>
-            <p class="no_margin">ООО "ЦЕНТРАЛЬНОЕ ЮРИДИЧЕСКОЕ БЮРО</p>
-            <p class="no_margin">ОГРН: 1237700537590, ИНН: 9709097550</p>
-            <p class="no_margin">© 2023 ЦЕНТРАЛЬНОЕ ЮРИДИЧЕСКОЕ БЮРО | Все права защищены</p>
-        </footer>
         <div class="yvedw">
             <div class="yved yvedf1">
                 <div class="yvedvt">
@@ -204,44 +175,6 @@
                 listItem.classList.toggle('prehidden');
             });
         });
-
-        // Code for automatically fill the carousel with images
-
-        const carouselContainer = document.getElementById('carousel');
-        const images = [];
-
-        for (let i = 1; i < 50; i++) {
-            const newPathToImage = `assets/carousel_aboutus/image${i}.jpg`;
-            images.push(newPathToImage);
-        }
-
-        function loadImage(src) {
-            return new Promise((resolve, reject) => {
-                const img = new Image();
-                img.onload = () => resolve(img);
-                img.onerror = () => reject(new Error(`Failed to load image at ${src}`));
-                img.src = src;
-            });
-        }
-
-        async function processImagesSequentially(images) {
-            for (let src of images) {
-                try {
-                    console.log(src);
-                    const img = await loadImage(src); 
-                    const imageWrapper = document.createElement('div');
-                    imageWrapper.classList.add('carousel-item');
-                    imageWrapper.appendChild(img);
-                    carouselContainer.appendChild(imageWrapper);
-                } catch (error) {
-                    console.error(error);
-                    setupCarouselControls();
-                    break; 
-                }
-            }
-        }
-
-        processImagesSequentially(images);
     </script>
 </body>
 </html>
