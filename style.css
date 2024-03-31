@@ -627,6 +627,10 @@ body {
     font-size: var(--fs--1);
 }
 
+#pagination {
+    text-align: center;
+}
+
 #pagination a {
     padding: 5px;
     margin: 2px;

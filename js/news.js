@@ -55,11 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 document.querySelectorAll('#pagination .page-link').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
+                adjustPaginationLinksVisibility(i, totalPages);
             });
 
             paginationDiv.appendChild(pageLink);
         }
         paginationDiv.firstChild.classList.add('active');
+        adjustPaginationLinksVisibility(1, totalPages);
     }
 
     function calculateItemsPerPage() {
@@ -70,3 +72,43 @@ document.addEventListener("DOMContentLoaded", function() {
 
     fetchNews();
 });
+
+function adjustPaginationLinksVisibility(currentPage, totalPages) {
+    const paginationDiv = document.getElementById('pagination');
+    const links = paginationDiv.getElementsByClassName('page-link');
+    const ellipsis = document.createElement('span');
+    ellipsis.textContent = '...';
+
+    for (let link of links) {
+        link.style.display = 'none';
+    }
+
+    links[0].style.display = '';
+
+    let start = Math.max(currentPage - 2, 1);
+    let end = Math.min(start + 4, totalPages - 1);
+
+    if (currentPage < 5) {
+        end = Math.min(5, totalPages - 1);
+    }
+    if (currentPage > totalPages - 5) {
+        start = Math.max(totalPages - 5, 1);
+    }
+
+    for (let i = start; i <= end; i++) {
+        links[i - 1].style.display = '';
+    }
+
+    if (totalPages > 1) {
+        links[totalPages - 1].style.display = '';
+    }
+
+    paginationDiv.querySelectorAll('span').forEach(span => span.remove()); 
+    if (end < totalPages - 1) {
+        paginationDiv.insertBefore(ellipsis.cloneNode(true), links[totalPages - 1]);
+    }
+
+    if (start > 2) { 
+        paginationDiv.insertBefore(ellipsis.cloneNode(true), links[start - 1]);
+    }
+}
