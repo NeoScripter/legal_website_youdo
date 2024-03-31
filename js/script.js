@@ -33,17 +33,6 @@ function createRandomNumber() {
 updateVisitorNumbers();
 setInterval(updateVisitorNumbers, 10000);
 
-// Hidden lines in the services section //
-
-const serviceItems = document.querySelectorAll('.service_item');
-
-serviceItems.forEach((item) => {
-    item.addEventListener('click', () => {
-        const closestDescription = item.closest('.service_item').querySelector('.service_description');
-        closestDescription.classList.toggle('hidden');
-    });
-});
-
 // Code that counts how many carousel images should be displayed at a time based on the screen width
 
 function setupCarouselControls() {

@@ -570,6 +570,13 @@ body {
     cursor: pointer;
 }
 
+.service_description {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: opacity 0.5s, height 0.5s;
+}
+
 .price {
     font-family: 'Montrerrat Semi-Bold';
     font-size: var(--fs-1);
