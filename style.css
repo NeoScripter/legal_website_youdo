@@ -647,7 +647,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    z-index: 12;
+    z-index: 300;
 }
 
 .back_btn_wrapper {
@@ -738,7 +738,7 @@ body {
 .yved {
     position: fixed;
     right: 20px;
-    top: 70px;
+    top: 170px;
     width: 250px;
     color: white;
     padding: 15px;

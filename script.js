@@ -44,50 +44,7 @@ serviceItems.forEach((item) => {
     });
 });
 
-// Code for automatically fill the carousel with images //
-
-const carouselContainer = document.getElementById('carousel');
-const images = [];
-
-for (let i = 1; i < 50; i++) {
-    const newPathToImage = `assets/carousel/image${i}.jpg`;
-    images.push(newPathToImage);
-}
-
-function loadImage(src) {
-    return new Promise((resolve, reject) => {
-        const img = new Image();
-        img.onload = () => resolve(img);
-        img.onerror = () => reject(new Error(`Failed to load image at ${src}`));
-        img.src = src;
-    });
-}
-
-async function processImagesSequentially(images) {
-    for (let src of images) {
-        try {
-            console.log(src);
-            const img = await loadImage(src); 
-            const imageWrapper = document.createElement('div');
-            if (carouselContainer.classList.contains('practice')) {
-                console.log('Item has the class "active".');
-            } else {
-                console.log('Item does not have the class "active".');
-            }
-            imageWrapper.classList.add('carousel-item');
-            imageWrapper.appendChild(img);
-            carouselContainer.appendChild(imageWrapper);
-        } catch (error) {
-            console.error(error);
-            setupCarouselControls();
-            break; 
-        }
-    }
-}
-
-processImagesSequentially(images);
-
-// Code that counts how many carousel images should be displayed at a time based on the screen width //
+// Code that counts how many carousel images should be displayed at a time based on the screen width
 
 function setupCarouselControls() {
     let index = 0;
@@ -131,7 +88,7 @@ function setupCarouselControls() {
     }
 }
 
-// Free consulation visitor imitator //
+// Free consulation visitor imitator
 
 let currentIndex = 0;
 
@@ -157,7 +114,7 @@ setTimeout(function() {
 }, 10000);
 
 
-// Privacy policy //
+// Privacy policy
 
 const policyWrappers = document.querySelectorAll('.policy_wrapper');
 const mainContentWrappers = document.querySelectorAll('.overlay_wrapper');
@@ -187,7 +144,7 @@ document.querySelectorAll('.close_policy_btn').forEach(closeButton => {
     });
 });
 
-// Privacy policy appearing on the main page //
+// Privacy policy appearing on the main page
 
 const returnButton = document.getElementById('back_to_main_btn');
 const policyOverlay = document.querySelector('.policy_overlay');
