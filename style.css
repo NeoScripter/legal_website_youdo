@@ -198,6 +198,7 @@ body {
 .phone_link:focus, .phone_link:hover {
     color: rgb(0,0,0,0.8);
     background-color: var(--primary-text-color);
+    outline: none;
 }
 
 /****** Main page ******/
@@ -414,6 +415,7 @@ body {
 .request_consultation:focus, .request_consultation:hover {
     color: rgb(0,0,0,0.8);
     background-color: var(--primary-text-color);
+    outline: none;
 }
 
 @media screen and (max-width: 750px) {
@@ -631,6 +633,7 @@ body {
 .expand_button:focus, .expand_button:hover {
     color: rgb(0,0,0,0.8);
     background-color: var(--primary-text-color);
+    outline: none;
 }
 
 .question_description p {
@@ -713,6 +716,7 @@ body {
 .news_link:focus, .news_link:hover {
     color: rgb(0,0,0,0.8);
     background-color: var(--primary-text-color);
+    outline: none;
 }
 
 #pagination {
@@ -849,6 +853,7 @@ body {
 .close_policy_btn:focus, .close_policy_btn:hover, #back_to_main_btn:focus, #back_to_main_btn:hover {
     color: rgb(0,0,0,0.8);
     background-color: var(--primary-text-color);
+    outline: none;
 }
 
 @media screen and (max-width: 500px) {
