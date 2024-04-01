@@ -55,13 +55,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 document.querySelectorAll('#pagination .page-link').forEach(link => link.classList.remove('active'));
                 this.classList.add('active');
-                adjustPaginationLinksVisibility(i, totalPages);
+                adjustLinksVisibility(i, totalPages);
             });
 
             paginationDiv.appendChild(pageLink);
         }
         paginationDiv.firstChild.classList.add('active');
-        adjustPaginationLinksVisibility(1, totalPages);
+        adjustLinksVisibility(1, totalPages);
     }
 
     function calculateItemsPerPage() {
@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
     fetchNews();
 });
 
-function adjustPaginationLinksVisibility(currentPage, totalPages) {
+function adjustLinksVisibility(currentPage, totalPages) {
     const paginationDiv = document.getElementById('pagination');
     const links = paginationDiv.getElementsByClassName('page-link');
     const ellipsis = document.createElement('span');

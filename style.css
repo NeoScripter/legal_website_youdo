@@ -4,6 +4,7 @@
     --section-dark-bg-color: rgb(40, 39, 39);
     --statue-height: 50rem;
     --background-gradient: linear-gradient(to bottom, var(--section-light-bg-color) 0%, var(--section-dark-bg-color) 100%);
+    --background-gradient-news: linear-gradient(to bottom right, var(--section-light-bg-color) 0%, var(--section-dark-bg-color) 100%);
 
     --fs--2: clamp(0.7035rem, 0.8118rem + -0.1083vi, 0.7901rem);
     --fs--1: clamp(0.8889rem, 0.8767rem + 0.0611vi, 0.9377rem);
@@ -105,7 +106,7 @@ body {
     left: 0;
     right: 0;
     z-index: 200;
-    background: var(--background-gradient);
+    background: var(--background-gradient-news);
 }
 
 .nav_list {
@@ -440,9 +441,6 @@ body {
     }
 }
 
-/****** Second section ******/
-
-
 /****** Carousel ******/
 
 .carousel {
@@ -560,7 +558,7 @@ body {
 .services_left_subsection, .services_right_subsection {
     flex: 1;
     padding: 1.5em;
-    min-width: 300px;
+    min-width: 400px;
 }
 
 .service_item {
@@ -569,12 +567,47 @@ body {
     cursor: pointer;
 }
 
+.service_item h4 {
+    margin-bottom: 0.5em;
+}
+
 .service_description {
     overflow: hidden;
     height: 0;
     opacity: 0;
     transition: opacity 0.5s, height 0.5s;
 }
+
+.expanded {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: opacity 0.5s, max-height 0.5s ease-in-out;
+    transition-property: opacity, max-height;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-in-out;
+}
+
+.expand_button:focus, .expand_button:hover {
+    color: rgb(0,0,0,0.8);
+    background-color: var(--primary-text-color);
+}
+
+.question_description p {
+    font-size: var(--fs--1);
+}
+
+.support .service_item {
+    border-bottom: none;
+}
+
+.expand_button {
+    background-color: #363636;
+    text-align: center;
+    width: 100%;
+    border: 1px solid var(--primary-text-color);
+}
+
 
 .price {
     font-family: 'Montrerrat Semi-Bold';
@@ -620,6 +653,7 @@ body {
     padding: clamp(0.3em, 3vw, 1em);
     border-radius: 10px;
     box-shadow: 4px 4px 5px 5px rgb(0,0,0, 0.3);
+    background: var(--background-gradient-news);
 }
 
 .news_piece > p {
