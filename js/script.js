@@ -55,26 +55,19 @@ function setupCarouselControls() {
     });
 
     document.querySelector('.prev').addEventListener('click', () => {
-        if (index > 0) {
-            index--;
-        } else {
-            index = totalItems - 1; 
-        }
-        updateCarousel();
+        const carousel = document.querySelector('.carousel-items');
+        const lastItem = carousel.querySelector('.carousel-item:last-child');
+        const firstItem = carousel.querySelector('.carousel-item:first-child');
+        carousel.removeChild(lastItem);
+        carousel.insertBefore(lastItem, firstItem);
     });
 
     document.querySelector('.next').addEventListener('click', () => {
-        if (index < totalItems - 1) {
-            index++;
-        } else {
-            index = 0; 
-        }
-        updateCarousel();
+        const firstItem = document.querySelector('.carousel-item');
+        const carousel = document.querySelector('.carousel-items');
+        carousel.removeChild(firstItem);
+        carousel.appendChild(firstItem);
     });
-    function updateCarousel() {
-        const offset = index * -100;
-        document.querySelector('.carousel-items').style.transform = `translateX(${offset / divisor}%)`;
-    }
 }
 
 // Free consulation visitor imitator
