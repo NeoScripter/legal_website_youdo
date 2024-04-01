@@ -562,9 +562,43 @@ body {
     min-width: 345px;
 }
 
-.support .services_left_subsection {
-    overflow: scroll;
-    height: 900px;
+#answers .service_item {
+    padding-top: 0;
+    margin-bottom: 1em;
+    transition: opacity 0.5s ease-in-out;
+} 
+
+.service_items_wrapper {
+    overflow: hidden;
+    height: 1000px;
+}
+
+.arrow_wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrow {
+    display: inline-block;
+    transform-origin: center;
+}
+
+.up {
+    transform: rotate(90deg);
+}
+
+.down {
+    transform: rotate(-90deg);
+}
+
+.up, .down {
+    background-color: transparent;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    height: 50px;
 }
 
 .service_item {

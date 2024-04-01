@@ -26,3 +26,33 @@ document.querySelectorAll('.expand_button').forEach(button => {
         }
     });
 });
+
+const arrowUp = document.querySelector('.up');
+const arrowDown = document.querySelector('.down');
+
+arrowDown.addEventListener('click', () => {
+    const answerContainer = document.querySelector('.service_items_wrapper');
+    const firstItem = answerContainer.querySelector('.service_item:first-child');
+    const lastItem = answerContainer.querySelector('.service_item:last-child');
+    
+    firstItem.style.opacity = "0";
+
+    setTimeout(() => {
+        answerContainer.appendChild(firstItem);
+
+        requestAnimationFrame(() => {
+            firstItem.style.opacity = "1"; 
+        });
+    }, 500); 
+});
+
+arrowUp.addEventListener('click', () => {
+    const answerContainer = document.querySelector('.service_items_wrapper');
+    const lastItem = answerContainer.querySelector('.service_item:last-child');
+    const firstItem = answerContainer.querySelector('.service_item:first-child');
+    lastItem.style.opacity = "0";
+    answerContainer.insertBefore(lastItem, firstItem);
+    setTimeout(() => {
+        lastItem.style.opacity = "1";
+    }, 500);
+});
