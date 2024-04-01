@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: 
+Host: centr-ub.ru
+Sitemap: http://centr-ub.ru/sitemap.xml

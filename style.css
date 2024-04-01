@@ -700,6 +700,21 @@ body {
     font-size: var(--fs--1);
 }
 
+.news_link_wrapper {
+    margin: 1em 0 0.3em 0;
+}
+.news_link {
+    border: 1px solid var(--primary-text-color);
+    padding: 0.3em 0.5em;
+    color: var(--primary-text-color);
+    border-radius: 5px;
+}
+
+.news_link:focus, .news_link:hover {
+    color: rgb(0,0,0,0.8);
+    background-color: var(--primary-text-color);
+}
+
 #pagination {
     text-align: center;
 }
@@ -711,6 +726,7 @@ body {
     text-decoration: none;
     color: white;
 }
+
 #pagination a.active {
     background-color: rgb(176, 184, 194, 0.4);
     color: white;
