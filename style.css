@@ -296,6 +296,7 @@ body {
     min-height: 3rem;
     background-color: transparent;
     border: 2px solid var(--primary-text-color);
+    color: rgb(220, 202, 202);
 }
 
 .form-input {

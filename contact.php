@@ -18,10 +18,6 @@
         return $val;
     }
 
-    function validate_email($email) {
-        return filter_var($email, FILTER_VALIDATE_EMAIL);
-    }
-    
     function validate_phone($phone) {
         $pattern = '/^(\+7|8)\d{10}$/';
         return preg_match($pattern, $phone);
@@ -33,7 +29,6 @@
 
     if(!$name) { $error .= 'Пожалуйста введите ваше имя<br />'; }
     if(!$phone || !validate_phone($phone)) { $error .= 'Пожалуйста введите правильный телефонный номер<br />'; }
-    if(!$email || !validate_email($email)) { $error .= 'Пожалуйста введите правильный email<br />'; }
     if(!$text || strlen($text) < 1) { $error .= "Введите ваше сообщение<br />"; }
 
     if(!$error) {
