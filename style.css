@@ -558,7 +558,12 @@ body {
 .services_left_subsection, .services_right_subsection {
     flex: 1;
     padding: 1.5em;
-    min-width: 400px;
+    min-width: 345px;
+}
+
+.support .services_left_subsection {
+    overflow: scroll;
+    height: 900px;
 }
 
 .service_item {
