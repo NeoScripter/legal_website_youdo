@@ -98,44 +98,67 @@ setTimeout(function() {
 
 // Privacy policy
 
-const policyWrappers = document.querySelectorAll('.policy_wrapper');
-const mainContentWrappers = document.querySelectorAll('.overlay_wrapper');
-const reviewsWrapper = document.querySelector('.reviews_wrapper');
+async function fetchHtmlContent() {
+    const paths = ['../json_files/policy.html', 'json_files/policy.html'];
+    for (const path of paths) {
+        try {
+            const response = await fetch(path);
+            if (response.ok) {
+                const htmlContent = await response.text();
+                document.querySelector('.policy_wrapper').innerHTML = htmlContent;
+                setPolicyElements();
+                return; 
+            }
+        } catch (error) {
+            console.error(`Error fetching HTML content from ${path}:`, error);
+        }
+    }
+    console.error('All paths failed to load HTML content.');
+}
 
-document.querySelectorAll('.open_policy_btn').forEach(openButton => {
-    openButton.addEventListener('click', () => {
-        policyWrappers.forEach(policyWrapper => {
-            policyWrapper.style.display = 'block';
+fetchHtmlContent();
+
+function setPolicyElements() {
+    const policyWrappers = document.querySelectorAll('.policy_wrapper');
+    const mainContentWrappers = document.querySelectorAll('.overlay_wrapper');
+    const reviewsWrapper = document.querySelector('.reviews_wrapper');
+    
+    document.querySelectorAll('.open_policy_btn').forEach(openButton => {
+        openButton.addEventListener('click', () => {
+            policyWrappers.forEach(policyWrapper => {
+                policyWrapper.style.display = 'block';
+            });
+            mainContentWrappers.forEach(contentWrapper => {
+                contentWrapper.style.display = 'none';
+            });
+            reviewsWrapper.style.display = 'none';
         });
-        mainContentWrappers.forEach(contentWrapper => {
-            contentWrapper.style.display = 'none';
-        });
-        reviewsWrapper.style.display = 'none';
     });
-});
-
-document.querySelectorAll('.close_policy_btn').forEach(closeButton => {
-    closeButton.addEventListener('click', () => {
-        policyWrappers.forEach(policyWrapper => {
-            policyWrapper.style.display = 'none';
+    
+    document.querySelectorAll('.close_policy_btn').forEach(closeButton => {
+        closeButton.addEventListener('click', () => {
+            policyWrappers.forEach(policyWrapper => {
+                policyWrapper.style.display = 'none';
+            });
+            mainContentWrappers.forEach(contentWrapper => {
+                contentWrapper.style.display = 'block';
+            });
+            reviewsWrapper.style.display = 'flex';
         });
-        mainContentWrappers.forEach(contentWrapper => {
-            contentWrapper.style.display = 'block';
-        });
-        reviewsWrapper.style.display = 'flex';
     });
-});
-
-// Privacy policy appearing on the main page
-
-const returnButton = document.getElementById('back_to_main_btn');
-const policyOverlay = document.querySelector('.policy_overlay');
-const freeConsulationButton = document.querySelector('.request_consultation');
-
-freeConsulationButton.addEventListener('click', () => {
-    policyOverlay.style.display = 'flex';
-});
-
-returnButton.addEventListener('click', () => {
-    policyOverlay.style.display = 'none';
-});
+    
+    // Privacy policy appearing on the main page
+    
+    const returnButton = document.getElementById('back_to_main_btn');
+    const policyOverlay = document.querySelector('.policy_overlay');
+    const freeConsulationButton = document.querySelector('.request_consultation');
+    
+    freeConsulationButton.addEventListener('click', () => {
+        policyOverlay.style.display = 'flex';
+    });
+    
+    returnButton.addEventListener('click', () => {
+        policyOverlay.style.display = 'none';
+    });
+    
+}
